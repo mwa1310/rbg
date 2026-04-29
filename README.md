@@ -1,4 +1,4 @@
-# 🖼️ RmBgBot — Background Remover CLI
+# 🖼️ rbg — Background Remover CLI
 
 A simple and interactive command-line bot that automatically removes the background from any image using AI, powered by the [`rembg`](https://github.com/danielgatis/rembg) library.
 
@@ -27,8 +27,8 @@ A simple and interactive command-line bot that automatically removes the backgro
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/your-username/RmBgBot.git
-cd RmBgBot
+git clone https://github.com/mwa1310/rbg.git
+cd rbg
 ```
 
 **2. Install the dependencies**
@@ -46,7 +46,7 @@ pip install rembg Pillow
 Run the script from the directory containing your images:
 
 ```bash
-python RmBgBot.py
+python rbg.py
 ```
 
 The bot will prompt you for the name of the image (including its extension):
@@ -70,9 +70,9 @@ continue ? (y/n)
 ## 📁 Project Structure
 
 ```
-RmBgBot/
+rbg/
 │
-├── RmBgBot.py       # Main script
+├── rbg.py       # Main script
 └── README.md        # Project documentation
 ```
 
