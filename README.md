@@ -11,6 +11,7 @@ A simple and interactive command-line bot that automatically removes the backgro
 - 🖼️ Automatic preview of the output image
 - 🔁 Process multiple images in a single session
 - 📁 Saves output as a transparent `.png` file in the current directory
+- 🛡️ Robust error handling with clear, descriptive messages
 
 ---
 
@@ -46,51 +47,71 @@ pip install rembg Pillow
 Run the script from the directory containing your images:
 
 ```bash
-python rbg.py
+python rgb.py
 ```
 
 The bot will prompt you for the name of the image (including its extension):
 
 ```
-Hi! I am a bot that help you to remove the background of an image.
-Enter the name of your image (with its extension): photo.jpg
+Bonjour ! Je suis un bot qui supprime le fond de vos images.
+
+Entrez le nom de votre image (avec son extension) :
+> photo.jpg
 ...
+⏳ Traitement en cours...
+✅ Image sauvegardée : /your/path/photo2.png
 ```
 
-The processed image will be saved in the same directory with a `2` appended to the original filename (e.g., `photo2.png`), and will open automatically for preview.
+The processed image is saved in the same directory with a `2` appended to the original filename (e.g., `photo2.png`), and opens automatically for preview.
 
 You will then be asked whether you want to process another image:
 
 ```
-continue ? (y/n)
+Voulez-vous traiter une autre image ? (y/n) :
+> n
+
+Au revoir ! 👋
 ```
+
+---
+
+## 🛡️ Error Handling
+
+The bot handles the following errors gracefully without crashing:
+
+| Situation | Message |
+|-----------|---------|
+| File not found | `❌ Erreur : le fichier 'x' est introuvable dans le répertoire courant.` |
+| Unsupported format | `❌ Erreur : format '.x' non supporté. Formats acceptés : ...` |
+| Corrupted image | `❌ Erreur : impossible de lire 'x'. Le fichier est peut-être corrompu.` |
+| Permission denied (read/write) | `❌ Erreur : accès refusé au fichier 'x'.` |
+| Processing failure | `❌ Erreur lors du traitement de l'image : ...` |
+| Preview unavailable | `⚠️ Impossible d'ouvrir la prévisualisation, mais l'image a bien été sauvegardée.` |
+| Empty input | `❌ Erreur : aucun nom de fichier saisi.` |
+| Invalid continue prompt | `⚠️ Réponse invalide. Tapez 'y' pour continuer ou 'n' pour quitter.` |
+
+---
+
+## 🖼️ Supported Formats
+
+| Format | Extension |
+|--------|-----------|
+| JPEG | `.jpg`, `.jpeg` |
+| PNG | `.png` |
+| WebP | `.webp` |
+| BMP | `.bmp` |
+| TIFF | `.tiff` |
 
 ---
 
 ## 📁 Project Structure
 
 ```
-rbg/
+RmBgBot/
 │
-├── rbg.py       # Main script
+├── rgb.py           # Main script
 └── README.md        # Project documentation
 ```
-
----
-
-## 🖼️ Example
-
-| Input | Output |
-|-------|--------|
-| `portrait.jpg` | `portrait2.png` (background removed, transparent) |
-
----
-
-## ⚠️ Notes
-
-- The input image must be located in the **same directory** as the script (or provide the full path).
-- Output images are always saved in `.png` format to preserve transparency.
-- Supported input formats: `.jpg`, `.jpeg`, `.png`, `.webp`, and most common image formats supported by Pillow.
 
 ---
 
