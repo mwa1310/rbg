@@ -1,4 +1,4 @@
-# 🖼️ RmBgBot — Background Remover CLI
+# 🖼️ rbg — Background Remover CLI
 
 A simple and interactive command-line bot that automatically removes the background from any image using AI, powered by the [`rembg`](https://github.com/danielgatis/rembg) library.
 
