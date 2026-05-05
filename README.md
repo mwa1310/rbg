@@ -35,7 +35,7 @@ cd rbg
 **2. Install the dependencies**
 
 ```bash
-pip install rembg Pillow
+pip install -r requirements.txt.
 ```
 
 > ⚠️ On first run, `rembg` will automatically download the AI model (~170 MB). An internet connection is required.
@@ -47,7 +47,7 @@ pip install rembg Pillow
 Run the script from the directory containing your images:
 
 ```bash
-python rgb.py
+python rbg.py
 ```
 
 The bot will prompt you for the name of the image (including its extension):
@@ -109,7 +109,7 @@ The bot handles the following errors gracefully without crashing:
 ```
 RmBgBot/
 │
-├── rgb.py           # Main script
+├── rbg.py           # Main script
 └── README.md        # Project documentation
 ```
 
