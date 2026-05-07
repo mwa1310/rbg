@@ -110,7 +110,8 @@ The bot handles the following errors gracefully without crashing:
 RmBgBot/
 │
 ├── rbg.py           # Main script
-└── README.md        # Project documentation
+├── README.md        # Project documentation
+└── requirements.txt # Needed dependencies
 ```
 
 ---
